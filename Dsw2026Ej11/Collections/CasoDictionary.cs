@@ -11,6 +11,11 @@ public class CasoDictionary
 {
     private Dictionary<int, Alumno> alumnos;
 
+    public CasoDictionary()
+    {
+        alumnos = new Dictionary<int, Alumno>();
+    }
+
     public void AgregarAlumno(Alumno alumno)
     {
         alumnos.Add(alumno.Id, alumno);

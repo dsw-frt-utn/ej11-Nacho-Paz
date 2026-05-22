@@ -15,9 +15,9 @@ internal class Ejemplos
     public static void EjemploList()
     {
         CasoList caso = new CasoList();
-        caso.AgregarAlumno(new Alumno(1, "Juan", 8.5d));
-        caso.AgregarAlumno(new Alumno(2, "Maria", 9.0d));
-        caso.AgregarAlumno(new Alumno(3, "Pedro", 7.5d));
+        caso.AgregarAlumno(new Alumno(1, "Juan", 8.5));
+        caso.AgregarAlumno(new Alumno(2, "Maria", 9.0));
+        caso.AgregarAlumno(new Alumno(3, "Pedro", 7.5));
         Console.WriteLine("Alumnos:");
         foreach (Alumno alumno in caso.GetAlumnos())
         {
@@ -40,9 +40,6 @@ internal class Ejemplos
         {
             Console.WriteLine(alumno);
         }
-
-
-
     }
 
     //Agregar 3 alumnos al diccionario
@@ -52,12 +49,26 @@ internal class Ejemplos
     //Eliminar un alumno por clave y listar por consola los alumnos
     public static void EjemploDictionary()
     {
-
+        CasoDictionary caso = new CasoDictionary();
+        caso.AgregarAlumno(new Alumno(1, "Juan", 8.5));
+        caso.AgregarAlumno(new Alumno(2, "Maria", 9.0));
+        caso.AgregarAlumno(new Alumno(3, "Pedro", 7.5));
+        Console.WriteLine("\nMostrar un alumno:");
+        Alumno? alumno = caso.BuscarAlumno(2);
+        Console.WriteLine(alumno != null ? alumno.ToString() : "No existe");
+        alumno = caso.BuscarAlumno(4);
+        Console.WriteLine(alumno != null ? alumno.ToString() : "No existe");
+        Console.WriteLine("\nEliminar un alumno y mostrar los alumnos:");
+        caso.EliminarAlumno(2);
+        foreach (Alumno a in caso.GetAlumnos().Values)
+        {
+            Console.WriteLine(a);
+        }
     }
 
     //Realizar una llamada a cada método definido en CasoLinq y mostar por consola según corresponda
     public static void EjemploLinq()
     {
-
+        
     }
 }
