@@ -15,6 +15,6 @@ public class Alumno
 
     public override string ToString()
     {
-        return $"{Id} - {Nombre} - Promedio: {Promedio}";
+        return $"{Id} - {Nombre} - Promedio: {Promedio:F2}";
     }
 }
