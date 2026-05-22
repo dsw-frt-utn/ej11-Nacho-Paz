@@ -1,4 +1,5 @@
 ﻿using Dsw2026Ej11.Domain;
+using System.Globalization;
 
 namespace Dsw2026Ej11.Collections;
 
@@ -53,7 +54,7 @@ public class CasoLinq
 
     public List<string> GetLibros()
     {
-        return libros.Select(l => $"{l.Titulo}: {l.Precio:C}").ToList();
+        return libros.Select(l => $"{l.Titulo}: {l.Precio.ToString("C", new CultureInfo("es-AR"))}").ToList();
     }
 
     public Libro GetMayorPrecio()
